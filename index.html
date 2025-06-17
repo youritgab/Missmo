@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+            #First {
+                position: absolute;
+                top: 320px;
+                left: 50%;
+                bottom: 50%;
+                right: 50%;
+                width: 500px;
+                height: 600px;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                font-family: Arial, sans-serif;
+                outline: black solid 2px;
+            }
+
+            #missko {
+                display: none;
+                position: absolute;
+                top: 20%;
+                left: 20px;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+
+            #secret {
+                display: none;
+                position: absolute;
+                left: 25px;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+            
+            #hindi {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            audio {
+                position: absolute;
+                top: 375px;
+                left: 85px;
+            }
+        </style>
+        <title>Missmo?</title>
+    </head>
+        <body>
+            <div id="First">
+                    <h1>Miss mo?</h1>
+                    <form>
+                <input type="radio" id="oo" name="missmo" value="oo">
+                <label for="oo">Oo</label>
+                <input type="radio" id="hindi" name="missmo" value="hindi">
+                <label for="hindi">Hindi</label>
+                    </form>
+                    <div id="missko">
+                        <img src="alden.jpg" width="450" height="350" id="alden">
+                        <audio controls autoplay>
+                            <source src="kungtayotalaga.mp3" type="audio/mpeg" id="audio">
+                        </audio>
+                    </div>
+                            <div id="secret">
+                                <video width="450" height="350" controls>
+                                    <source src="papadudut.mp4" type="video/mp4">
+                                </video>
+                            </div>
+            </div>
+                    <script>
+                        document.getElementById("oo").addEventListener("click", function() {
+                          document.getElementById("missko").style.display = "block";
+                        });
+
+                        document.getElementById("hindi").addEventListener("change", function () {
+                        if (this.checked) {
+                         document.getElementById("missko").style.display = "none";
+                        }
+                     });
+
+                        document.getElementById("hindi").addEventListener("click", function() {
+                          document.getElementById("secret").style.display = "block";
+                        });
+
+                        document.getElementById("oo").addEventListener("change", function () {
+                        if (this.checked) {
+                         document.getElementById("secret").style.display = "none";
+                        }
+                     });
+                      </script> 
+        </body>
+</html>
